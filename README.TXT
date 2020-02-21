@@ -33,7 +33,7 @@ At the root of project, execute
 
 -- Limitions
 
-This implementation assume the whole names list could be read into JVM memory.
+This implementation assume the whole names list fit into the memory.
 Currently, there is no test; yet to be done.
 
 
