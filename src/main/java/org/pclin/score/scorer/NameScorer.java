@@ -3,8 +3,8 @@ package org.pclin.score.scorer;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
-import static com.google.common.base.Preconditions.*;
-import static org.apache.commons.lang3.StringUtils.*;
+import static com.google.common.base.Preconditions.checkArgument;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @Service
 @Log4j2

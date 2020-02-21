@@ -1,6 +1,6 @@
--- OCC Interview Coding Assignment
+OCC Interview Coding Exercise
 
-Implemented as a Spring Boot ApplicationRunner and other opensource libraries.
+Implemented as a Spring Boot ApplicationRunner, using open-source libraries.
 Character values are defined in file application.propertes
 
 -- Project Dependencies
@@ -15,8 +15,10 @@ Lombok
 
 -- How to Build
 
-At the root of project, execute
-  ./gradlew clean build -x test
+cd to the root of project, execute
+  cd score_pclin
+  chmod a+x gradlew
+  ./gradlew clean build
 
 Gradle build script (gradlew) will download dependencies.
 
@@ -25,8 +27,14 @@ Gradle build script (gradlew) will download dependencies.
 
 At the root of project, execute
   java -jar build/libs/score-0.0.1-SNAPSHOT.jar  names.txt
-  
+  or
   java -jar build/libs/score-0.0.1-SNAPSHOT.jar [datafile]
+
+
+-- Limitions
+
+This implementation assume the whole names list could be read into JVM memory.
+Currently, there is no test; yet to be done.
 
 
 --  Contact
