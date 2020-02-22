@@ -1,5 +1,6 @@
 package org.pclin.score.scorer;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
@@ -8,19 +9,13 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @Service
 @Log4j2
+@RequiredArgsConstructor
 public class NameScorer implements Scorer {
     // Map of value for each character
     private final CharValue charValue;
 
-    public NameScorer(CharValue charValue) {
-        this.charValue = charValue;
-    }
-
     /**
      *  Calculate the score for individual name
-     * @param name
-     * @param weight
-     * @return
      */
     @Override
     public int score(String name, int weight) {

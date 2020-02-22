@@ -1,8 +1,5 @@
 package org.pclin.score.io;
 
-import static com.google.common.base.Preconditions.*;
-import static org.apache.commons.lang3.StringUtils.*;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,6 +13,9 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
+
+import static com.google.common.base.Preconditions.checkArgument;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @Service
 @Log4j2

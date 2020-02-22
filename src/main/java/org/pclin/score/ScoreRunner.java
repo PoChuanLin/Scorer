@@ -1,26 +1,23 @@
 package org.pclin.score;
 
-import static com.google.common.base.Preconditions.*;
-
 import java.util.List;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.pclin.score.io.NamesReader;
 import org.pclin.score.scorer.Scorer;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Service;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 @Service
 @Log4j2
+@RequiredArgsConstructor
 public class ScoreRunner implements ApplicationRunner {
     private final NamesReader reader;
     private final Scorer scorer;
-
-    public ScoreRunner(NamesReader reader, Scorer scorer) {
-        this.reader = reader;
-        this.scorer = scorer;
-    }
 
     @Override
     public void	run(ApplicationArguments args) throws Exception {
@@ -44,6 +41,9 @@ public class ScoreRunner implements ApplicationRunner {
         log.traceExit();
     }
 
+    /**
+     *  Calculate total score for the name list
+     */
     long calculate(List<String> names) {
         names.sort(null);  // sort by natural ordering
         int order = 1;
