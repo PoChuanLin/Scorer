@@ -45,12 +45,15 @@ public class ScoreRunner implements ApplicationRunner {
      *  Calculate total score for the name list
      */
     long calculate(List<String> names) {
+
         names.sort(null);  // sort by natural ordering
+
         int order = 1;
         long total = 0;
         for (String name : names) {
-            total += scorer.score(name, order++);
+            total += (scorer.score(name) * order++);
         }
+
         return total;
     }
 }

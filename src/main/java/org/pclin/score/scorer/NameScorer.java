@@ -18,8 +18,8 @@ public class NameScorer implements Scorer {
      *  Calculate the score for individual name
      */
     @Override
-    public int score(String name, int weight) {
-        log.traceEntry("name/weight: {}/{}", name, weight);
+    public int score(String name) {
+        log.traceEntry("name: {}", name);
         checkArgument(isNotBlank(name), "name is blank");
 
         // sum up the value for each char in name
@@ -28,10 +28,8 @@ public class NameScorer implements Scorer {
             Integer val = charValue.get(c);
             score = (val != null)? (score + val) : score;
         }
-        // multiple value of name by weight
-        score *= weight;
 
-        log.debug("name/weight/score : {}/{}/{}", name, weight, score);
+        log.debug("name/score : {}/{}", name, score);
         return score;
     }
 }
