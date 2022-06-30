@@ -11,4 +11,5 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "char")
 @Configuration
 public class CharValue extends HashMap<Character, Integer> {
+	private static final long serialVersionUID = 8566961032559967609L;
 }
